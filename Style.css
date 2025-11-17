@@ -1,0 +1,738 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.neb-calculator-wrapper {
+    font-family: inherit;
+    min-height: auto;
+    padding: 0;
+    color: inherit;
+}
+
+.neb-calculator-container {
+    width: 100%;
+    margin: 0;
+    background: transparent;
+    overflow: visible;
+}
+
+.header {
+    background: transparent;
+    color: inherit;
+    padding: 30px 0;
+    text-align: center;
+    border-bottom: 3px solid #7c3aed;
+}
+
+.graduation-logo {
+    font-size: 4rem;
+    margin-bottom: 15px;
+    display: block;
+    animation: float 3s ease-in-out infinite;
+}
+
+.header h1 {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+    font-weight: 800;
+    background: linear-gradient(135deg, #7c3aed 0%, #a855f7 50%, #c084fc 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    text-shadow: 0 4px 8px rgba(124, 58, 237, 0.3);
+}
+
+@keyframes float {
+    0%, 100% { transform: translateY(0px);
+    }
+    50% { transform: translateY(-10px);
+    }
+}
+
+.header p {
+    font-size: 1.1rem;
+    opacity: 0.9;
+}
+
+.main-content {
+    padding: 30px;
+}
+
+.section {
+    margin-bottom: 30px;
+    padding: 25px;
+    background: transparent;
+}
+
+.section h2 {
+    color: #7c3aed;
+    margin-bottom: 20px;
+    font-size: 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+.input-mode-selection {
+    display: flex;
+    gap: 20px;
+    margin-bottom: 30px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.mode-card {
+    padding: 20px;
+    border: 2px solid var(--wp-border-color, #e2e8f0);
+    border-radius: 12px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-align: center;
+    background: transparent;
+    min-width: 200px;
+}
+
+.mode-card:hover {
+    border-color: #7c3aed;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(124, 58, 237, 0.15);
+}
+
+.mode-card.selected {
+    border-color: #7c3aed;
+    background: rgba(124, 58, 237, 0.1);
+    color: #7c3aed;
+}
+
+.mode-card h3 {
+    margin-bottom: 8px;
+    font-size: 1.2rem;
+}
+
+.mode-card p {
+    font-size: 0.9rem;
+    color: #64748b;
+}
+
+.faculty-selection {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    margin-bottom: 30px;
+}
+
+.faculty-card {
+    padding: 20px;
+    border: 2px solid var(--wp-border-color, #e2e8f0);
+    border-radius: 12px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-align: center;
+    background: transparent;
+}
+
+.faculty-card:hover {
+    border-color: #7c3aed;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(124, 58, 237, 0.15);
+}
+
+.faculty-card.selected {
+    border-color: #7c3aed;
+    background: rgba(124, 58, 237, 0.1);
+    color: #7c3aed;
+}
+
+.faculty-card h3 {
+    margin-bottom: 8px;
+    font-size: 1.1rem;
+}
+
+.faculty-card p {
+    font-size: 0.8rem;
+    color: #64748b;
+}
+
+.subjects-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.subject-card {
+    background: transparent;
+    border: 1px solid var(--wp-border-color, #e2e8f0);
+    border-radius: 12px;
+    padding: 20px;
+    transition: all 0.3s ease;
+}
+
+.subject-card:hover {
+    box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+    transform: translateY(-2px);
+}
+
+.subject-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.subject-name {
+    font-weight: 600;
+    color: inherit;
+    font-size: 1.1rem;
+}
+
+.compulsory-badge {
+    background: #7c3aed;
+    color: white;
+    padding: 2px 8px;
+    border-radius: 12px;
+    font-size: 0.7rem;
+    font-weight: 500;
+}
+
+.elective-badge {
+    background: #f59e0b;
+    color: white;
+    padding: 2px 8px;
+    border-radius: 12px;
+    font-size: 0.7rem;
+    font-weight: 500;
+}
+
+.remove-subject {
+    background: #ef4444;
+    color: white;
+    border: none;
+    border-radius: 3px;
+    padding: 2px 6px;
+    cursor: pointer;
+    font-size: 0.65rem;
+    transition: background 0.3s ease;
+}
+
+.remove-subject:hover {
+    background: #dc2626;
+}
+
+.input-group {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.input-group label {
+    font-size: 0.9rem;
+    color: #64748b;
+    font-weight: 500;
+}
+
+.grade-select, .marks-input {
+    padding: 10px;
+    border: 2px solid var(--wp-border-color, #e2e8f0);
+    border-radius: 8px;
+    font-size: 1rem;
+    transition: border-color 0.3s ease;
+    background: var(--wp-bg-primary, white);
+    color: inherit;
+}
+
+.grade-select:focus, .marks-input:focus {
+    outline: none;
+    border-color: #7c3aed;
+    box-shadow: 0 0 0 3px rgba(124, 58, 237, 0.1);
+}
+
+.marks-input-container {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.marks-input-group {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.marks-input-group label {
+    font-weight: 600;
+    color: #374151;
+    font-size: 0.9rem;
+}
+
+.marks-info {
+    font-size: 0.8rem;
+    color: #6b7280;
+    margin-top: 2px;
+}
+
+.total-marks-display {
+    background: rgba(124, 58, 237, 0.1);
+    padding: 15px;
+    border-radius: 8px;
+    text-align: center;
+    margin-top: 10px;
+}
+
+.total-marks-display strong {
+    font-size: 1.1rem;
+    color: #7c3aed;
+}
+
+.grade-display {
+    margin-top: 5px;
+    font-size: 1rem;
+    font-weight: 600;
+}
+
+.marks-warning {
+    color: #ef4444;
+    font-size: 0.8rem;
+    margin-top: 2px;
+}
+
+.checkbox-group {
+    display: flex;
+    gap: 20px;
+    margin-top: 5px;
+}
+
+.checkbox-label {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-weight: normal;
+    cursor: pointer;
+}
+
+.checkbox-label input[type="checkbox"] {
+    width: 18px;
+    height: 18px;
+    accent-color: #7c3aed;
+}
+
+/* Dark mode support for form inputs */
+@media (prefers-color-scheme: dark) {
+    .grade-select, .marks-input, .form-input {
+        background: rgba(255, 255, 255, 0.1) !important;
+        border-color: rgba(255, 255, 255, 0.3) !important;
+        color: inherit !important;
+    }
+}
+
+/* WordPress dark mode class support */
+.dark .grade-select,
+.dark .marks-input,
+.dark .form-input,
+[data-theme="dark"] .grade-select,
+[data-theme="dark"] .marks-input,
+[data-theme="dark"] .form-input,
+.wp-dark-mode .grade-select,
+.wp-dark-mode .marks-input,
+.wp-dark-mode .form-input {
+    background: rgba(255, 255, 255, 0.1) !important;
+    border-color: rgba(255, 255, 255, 0.3) !important;
+    color: inherit !important;
+}
+
+.add-subject-section {
+    margin-top: 20px;
+    padding: 20px;
+    background: transparent;
+    border: 2px dashed var(--wp-border-color, #cbd5e1);
+}
+
+.add-subject-form {
+    display: flex;
+    gap: 15px;
+    align-items: end;
+    flex-wrap: wrap;
+}
+
+.form-group {
+    flex: 1;
+    min-width: 200px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: 500;
+    color: #374151;
+}
+
+.form-input {
+    width: 100%;
+    padding: 10px;
+    border: 2px solid var(--wp-border-color, #e2e8f0);
+    border-radius: 8px;
+    font-size: 1rem;
+    background: var(--wp-bg-primary, white);
+    color: inherit;
+}
+
+.form-input:focus {
+    outline: none;
+    border-color: #7c3aed;
+}
+
+.btn {
+    padding: 6px 12px;
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.btn-primary {
+    background: #7c3aed;
+    color: white;
+}
+
+.btn-primary:hover {
+    background: #6d28d9;
+    transform: translateY(-1px);
+}
+
+.btn-secondary {
+    background: #64748b;
+    color: white;
+}
+
+.btn-secondary:hover {
+    background: #475569;
+}
+
+.results-section {
+    background: linear-gradient(135deg, #7c3aed 0%, #a855f7 100%);
+    color: white;
+    border-radius: 15px;
+    padding: 30px;
+    margin-top: 30px;
+}
+
+.gpa-display {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.gpa-value {
+    font-size: 4rem;
+    font-weight: 700;
+    margin-bottom: 10px;
+    text-shadow: 0 2px 4px rgba(0,0,0,0.2);
+}
+
+.gpa-label {
+    font-size: 1.2rem;
+    opacity: 0.9;
+}
+
+.performance-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.performance-card {
+    background: rgba(255,255,255,0.1);
+    border-radius: 12px;
+    padding: 20px;
+    backdrop-filter: blur(10px);
+}
+
+.performance-card h3 {
+    margin-bottom: 15px;
+    font-size: 1.2rem;
+}
+
+.subject-performance {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+    padding: 8px 0;
+    border-bottom: 1px solid rgba(255,255,255,0.2);
+}
+
+.subject-performance:last-child {
+    border-bottom: none;
+}
+
+.performance-bar {
+    width: 100%;
+    height: 8px;
+    background: rgba(255,255,255,0.2);
+    border-radius: 4px;
+    margin-top: 15px;
+    overflow: hidden;
+}
+
+.performance-fill {
+    height: 100%;
+    background: #fbbf24;
+    border-radius: 4px;
+    transition: width 0.5s ease;
+}
+
+.suggestions {
+    background: rgba(255,255,255,0.1);
+    border-radius: 12px;
+    padding: 20px;
+    margin-top: 20px;
+}
+
+.suggestions h3 {
+    margin-bottom: 15px;
+    color: #fbbf24;
+}
+
+.suggestions ul {
+    list-style: none;
+}
+
+.suggestions li {
+    margin-bottom: 8px;
+    padding-left: 20px;
+    position: relative;
+}
+
+.suggestions li:before {
+    content: "💡";
+    position: absolute;
+    left: 0;
+}
+
+.action-buttons {
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+    margin-top: 30px;
+    flex-wrap: wrap;
+}
+
+.hidden {
+    display: none;
+}
+
+.fade-in {
+    animation: fadeIn 0.5s ease-in;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0;
+    transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0);
+    }
+}
+
+@media (max-width: 1024px) {
+    .main-content {
+        padding: 20px;
+    }
+    
+    .section {
+        padding: 20px;
+    }
+    
+    .subjects-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 768px) {
+    .neb-calculator-wrapper {
+        padding: 0 15px;
+    }
+    
+    .header {
+        padding: 20px 15px;
+    }
+    
+    .graduation-logo {
+        font-size: 3rem;
+    }
+    
+    .header h1 {
+        font-size: 1.8rem;
+    }
+    
+    .header p {
+        font-size: 1rem;
+    }
+    
+    .main-content {
+        padding: 15px;
+    }
+    
+    .section {
+        padding: 15px;
+        margin-bottom: 20px;
+    }
+    
+    .section h2 {
+        font-size: 1.3rem;
+        flex-direction: column;
+        text-align: center;
+        gap: 5px;
+    }
+    
+    .input-mode-selection {
+        flex-direction: column;
+        gap: 10px;
+    }
+    
+    .mode-card {
+        min-width: 100%;
+        padding: 15px;
+    }
+    
+    .faculty-selection {
+        grid-template-columns: 1fr;
+        gap: 10px;
+    }
+    
+    .subjects-grid {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+    
+    .subject-card {
+        padding: 15px;
+    }
+    
+    .subject-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+    }
+    
+    .add-subject-form {
+        flex-direction: column;
+        gap: 10px;
+    }
+    
+    .form-group {
+        min-width: 100%;
+    }
+    
+    .gpa-value {
+        font-size: 2.5rem;
+    }
+    
+    .performance-grid {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+    
+    .performance-card {
+        padding: 15px;
+    }
+    
+    .action-buttons {
+        flex-direction: column;
+        gap: 10px;
+    }
+    
+    .btn {
+        width: 100%;
+        justify-content: center;
+        padding: 15px;
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .neb-calculator-wrapper {
+        padding: 0 10px;
+    }
+    
+    .header {
+        padding: 15px 10px;
+    }
+    
+    .graduation-logo {
+        font-size: 2.5rem;
+    }
+    
+    .header h1 {
+        font-size: 1.5rem;
+    }
+    
+    .header p {
+        font-size: 0.9rem;
+    }
+    
+    .main-content {
+        padding: 10px;
+    }
+    
+    .section {
+        padding: 15px 10px;
+        margin-bottom: 15px;
+    }
+    
+    .section h2 {
+        font-size: 1.2rem;
+    }
+    
+    .mode-card {
+        padding: 12px;
+    }
+    
+    .mode-card h3 {
+        font-size: 1.1rem;
+    }
+    
+    .mode-card p {
+        font-size: 0.8rem;
+    }
+    
+    .subject-card {
+        padding: 12px;
+    }
+    
+    .subject-name {
+        font-size: 1rem;
+    }
+    
+    .grade-select, .marks-input, .form-input {
+        padding: 8px;
+        font-size: 0.9rem;
+    }
+    
+    .btn {
+        padding: 12px;
+        font-size: 0.9rem;
+    }
+    
+    .gpa-value {
+        font-size: 2rem;
+    }
+    
+    .performance-card {
+        padding: 12px;
+    }
+    
+    .performance-card h3 {
+        font-size: 1.1rem;
+    }
+    
+    .results-section {
+        padding: 20px 15px;
+    }
+}

@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NEB Class 12 GPA Calculator 2082</title>
+    </head>
+<body>
+    <div class="neb-gpa-calculator">
+        <div class="neb-calculator-wrapper">
+            <div class="neb-calculator-container">
+                <div class="header">
+                    <div class="graduation-logo">🎓</div>
+                    <h1>NEB Class 12 
+GPA Calculator 2082</h1>
+                    <p>Calculate your GPA accurately according to NEB grading system</p>
+                    <div style="margin-top: 15px; font-size: 0.9rem; opacity: 0.8;">
+                        <strong>Instructions:</strong> Select faculty, choose input method, enter your results, and click "Calculate GPA"
+                    </div>
+                </div>
+
+                <div class="main-content">
+                    <div class="section">
+                        <h2>🏫 Select Your Faculty</h2>
+                        <div class="faculty-selection">
+                            <div class="faculty-card selected" data-faculty="science">
+                                <h3>Science</h3>
+                                <p>Physics, Chemistry, Biology, Mathematics</p>
+                            </div>
+                            <div class="faculty-card" data-faculty="management">
+                                <h3>Management</h3>
+                                <p>Accountancy, Economics, Business Studies</p>
+                            </div>
+                            <div class="faculty-card" data-faculty="humanities">
+                                <h3>Humanities</h3>
+                                <p>Sociology, Psychology, History, Geography</p>
+                            </div>
+                            <div class="faculty-card" data-faculty="education">
+                                <h3>Education</h3>
+                                <p>Teaching methodology and pedagogy</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="section">
+                        <h2>⚙️ Choose Input Method</h2>
+                        <div class="input-mode-selection">
+                            <div class="mode-card selected" data-mode="grades">
+                                <h3>Enter Grades</h3>
+                                <p>A+, A, B+, B, C+, C, D+, D, E</p>
+                            </div>
+                            <div class="mode-card" data-mode="marks">
+                                <h3>Enter Marks</h3>
+                                <p>Numerical marks out of 100</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="section" id="subjects-section">
+                        <h2>📝 Enter Your Results</h2>
+                        <div id="subjects-container" class="subjects-grid">
+                            </div>
+
+                        <div class="add-subject-section">
+                            <h3>➕ Add Optional Subject</h3>
+                            <div class="add-subject-form">
+                                <div class="form-group">
+                                    <label for="custom-subject-name">Subject Name</label>
+                                    <input type="text" id="custom-subject-name" class="form-input" placeholder="Enter subject name">
+                                </div>
+                                <div class="form-group">
+                                    <label>Components</label>
+                                    <div class="checkbox-group">
+                                        <label class="checkbox-label">
+                                            <input type="checkbox" id="has-theory" checked> Theory
+                                        </label>
+                                        <label class="checkbox-label">
+                                            <input type="checkbox" id="has-practical"> Practical
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="form-group" id="theory-marks-group">
+                                    <label for="theory-total">Theory Total Marks</label>
+                                    <input type="number" id="theory-total" class="form-input" placeholder="75" value="75" min="1" max="200">
+                                </div>
+                                <div class="form-group hidden" id="practical-marks-group">
+                                    <label for="practical-total">Practical Total Marks</label>
+                                    <input type="number" id="practical-total" class="form-input" placeholder="25" value="25" min="1" max="200">
+                                </div>
+                                <button type="button" class="btn btn-primary" onclick="addCustomSubject()">Add Subject</button>
+                            </div>
+                        </div>
+                        
+                        <div style="text-align: center; margin-top: 30px;">
+                            <button class="btn btn-primary" onclick="calculateGPA()" style="font-size: 1.2rem; padding: 15px 30px;">
+                                🧮 Calculate GPA
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="results-section hidden" id="results-section">
+                        <div class="gpa-display">
+                            <div class="gpa-value" id="gpa-value">0.00</div>
+                            <div class="gpa-label">Your GPA</div>
+                            <div class="performance-bar">
+                                <div class="performance-fill" id="gpa-bar"></div>
+                            </div>
+                        </div>
+
+                        <div class="performance-grid">
+                            <div class="performance-card">
+                                <h3>🏆 Top Performing Subjects</h3>
+                                <div id="top-subjects"></div>
+                            </div>
+                            <div class="performance-card">
+                                <h3>📈 Subjects Needing Improvement</h3>
+                                <div id="improvement-subjects"></div>
+                            </div>
+                        </div>
+
+                        <div class="suggestions">
+                            <h3>💡 Personalized Suggestions</h3>
+                            <ul id="suggestions-list"></ul>
+                        </div>
+
+                        <div class="action-buttons">
+                            <button class="btn btn-secondary" onclick="resetCalculator()">🔄 Reset Calculator</button>
+                            <button class="btn btn-primary" onclick="saveResults()">💾 Save Results</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    </body>
+</html>
