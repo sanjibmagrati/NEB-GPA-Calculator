@@ -27,10 +27,15 @@ This calculator is more than just a simple math tool. It is built to make your a
  - Save/Print: Click the "Save Results" button. A new window will appear with the report. Use your browser's print option and choose "Save as PDF" to keep a digital copy.
 
 📊 Screenshots of NEB GPA Calculator
+
 <img width="100%" height="514" alt="gpa-calculator-2" src="https://github.com/user-attachments/assets/de1841f6-0d03-4dae-a94f-ec20fe20f2b1" />
+
 <img width="100%" height="241" alt="gpa-calculator-3" src="https://github.com/user-attachments/assets/e5858a39-b886-4de4-aff7-650afc1a7bd9" />
+
 <img width="100%" height="336" alt="gpa-calculator-4" src="https://github.com/user-attachments/assets/814f717c-03a8-4816-ae5c-efcf818fe7bd" />
+
 <img width="100%" height="304" alt="gpa-calculator-6" src="https://github.com/user-attachments/assets/72b7310f-d53e-42d5-9787-b5dea23a5beb" />
+
 <img width="100%" height="652" alt="gpa-calculator-5" src="https://github.com/user-attachments/assets/d86e32ca-92d0-4421-8f4a-eacdf2b6236f" />
 
 🛠️ Technology Used
@@ -58,5 +63,6 @@ This project is open-source and free for anyone to use.
 🚀 Try the Calculator Live!
 
 Click the button below to instantly launch the live, hosted version of the GPA Calculator:
+
 
 [![Live Demo Button](https://img.shields.io/badge/Open_GPA_Calculator-purple?style=for-the-badge&logo=github&logoColor=white)](https://webnotee.com/neb-class-12-gpa-calculator/)
